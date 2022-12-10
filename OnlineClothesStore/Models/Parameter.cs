@@ -14,8 +14,7 @@ namespace OnlineClothesStore.Models
         public string Descr { get; set; }
 
         public decimal Size { get; set; }
-
-        [NotMapped]
+    
         public ICollection<SaleItem> SaleItems { get; set; }
     }
 }

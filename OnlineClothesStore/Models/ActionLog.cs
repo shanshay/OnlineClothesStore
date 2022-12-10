@@ -9,8 +9,10 @@ namespace OnlineClothesStore.Models
         [Key]
         public int LogId { get; set; }
 
+
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
+
         public Customer Customer { get; set; }
 
         public DateTime Date { get; set; }

@@ -24,18 +24,16 @@ namespace OnlineClothesStore.Models
 
         public Color Color { get; set; }
 
+
         [ForeignKey("Gender")]
         public int GenderId { get; set; }
 
         public Gender Gender { get; set; }
-
-        [NotMapped]
+      
         public ICollection<Size> Sizes { get; set; }
-
-        [NotMapped]
+     
         public ICollection <Parameter> Parameters { get; set; }
-
-        [NotMapped]
+    
         public ICollection <Price> Prices { get; set; }
     }
 }

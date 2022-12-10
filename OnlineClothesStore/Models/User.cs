@@ -12,15 +12,22 @@ namespace OnlineClothesStore.Models
 
         public string LastName { get; set; }
 
+        public string FullName()
+        {
+            return $"{this.FirstName} {this.LastName}";
+        }
+
         public string Login { get; set; }
 
         public string Email { get; set; }
+
+        public string Phone { get; set; }
 
         public string Home { get; set; }
 
         [ForeignKey("Address")]
         public int AddressId { get; set; }
 
-        //public Address Address { get; set; }
+        public Address Address { get; set; }
     }
 }

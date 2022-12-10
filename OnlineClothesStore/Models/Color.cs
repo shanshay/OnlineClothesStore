@@ -10,8 +10,7 @@ namespace OnlineClothesStore.Models
         public int ColorId { get; set; }
 
         public string ColorName { get; set; }
-
-        [NotMapped]
+       
         public ICollection<SaleItem> SaleItems { get; set; }
     }
 }

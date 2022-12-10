@@ -11,8 +11,7 @@ namespace OnlineClothesStore.Models
         public int SizeId { get; set; }
 
         public string Name { get; set; }
-
-        [NotMapped]
+     
         public ICollection<SaleItem> SaleItems { get; set; }
     }
 }

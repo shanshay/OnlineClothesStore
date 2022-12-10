@@ -25,8 +25,7 @@ namespace OnlineClothesStore.Models
         public int CurrencyId { get; set; }
 
         public Currency Currency { get; set; }
-
-        [NotMapped]
+     
         public ICollection<SaleItem> SaleItems { get; set; }
     }
 }

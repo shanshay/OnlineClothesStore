@@ -17,7 +17,7 @@ namespace OnlineClothesStore.Models
         [ForeignKey("SaleItem")]
         public int SaleItemId { get; set; }
 
-        //public SaleItem SaleItem { get; set; }
+        public SaleItem SaleItem { get; set; }
 
         [ForeignKey("Size")]
         public int SizeId { get; set; }
