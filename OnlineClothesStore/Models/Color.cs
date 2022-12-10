@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineClothesStore.Models
 {
@@ -10,6 +11,7 @@ namespace OnlineClothesStore.Models
 
         public string ColorName { get; set; }
 
+        [NotMapped]
         public ICollection<SaleItem> SaleItems { get; set; }
     }
 }

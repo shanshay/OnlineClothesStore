@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineClothesStore.Models
 {
@@ -17,6 +18,9 @@ namespace OnlineClothesStore.Models
 
         public string Home { get; set; }
 
-        public Address Address { get; set; }
+        [ForeignKey("Address")]
+        public int AddressId { get; set; }
+
+        //public Address Address { get; set; }
     }
 }

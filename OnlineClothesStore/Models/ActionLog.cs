@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineClothesStore.Models
 {
@@ -8,6 +9,8 @@ namespace OnlineClothesStore.Models
         [Key]
         public int LogId { get; set; }
 
+        [ForeignKey("Customer")]
+        public int CustomerId { get; set; }
         public Customer Customer { get; set; }
 
         public DateTime Date { get; set; }
