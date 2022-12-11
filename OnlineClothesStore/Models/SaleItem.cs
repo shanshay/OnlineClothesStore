@@ -29,6 +29,11 @@ namespace OnlineClothesStore.Models
         public int GenderId { get; set; }
 
         public Gender Gender { get; set; }
+
+        [ForeignKey("Type")]
+        public Type TypeId { get; set; }
+
+        public Type Type { get; set; }
       
         public ICollection<Size> Sizes { get; set; }
      

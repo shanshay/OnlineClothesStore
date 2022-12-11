@@ -47,6 +47,8 @@ namespace OnlineClothesStore.Data
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Type> Types { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
