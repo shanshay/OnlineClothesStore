@@ -1,24 +1,15 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class Cart
 {
-    public class Cart
-    {
-        [Key]
-        public int CartId { get; set; }
+    public int CartId { get; set; }
 
-        [ForeignKey("Customer")]
-        public int CustomerId { get; set; }
+    public int CustomerId { get; set; }
 
-        public Customer Customer { get; set; }
+    public virtual ICollection<CartItem> CartItems { get; } = new List<CartItem>();
 
-        [ForeignKey("User")]
-        public int UserId { get; set; }
-
-        public User User { get; set; }
-     
-        public ICollection<CartItem> CartItems { get; set; }
-    }
+    public virtual Customer Customer { get; set; }
 }

@@ -1,21 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class SaleItemSize
 {
-    public class SaleItemSize
-    {
-        [Key]
-        public int SaleItemSizeId { get; set; }
+    public int SaleItemSizeId { get; set; }
 
-        [ForeignKey("SaleItem")]
-        public int SaleItemId { get; set; }
+    public int? SaleItemId { get; set; }
 
-        public SaleItem SaleItem { get; set; }
+    public int? SizeId { get; set; }
 
-        [ForeignKey("Size")]
-        public int SizeId { get; set; }
+    public virtual SaleItem SaleItem { get; set; }
 
-        public Size Size { get; set; }
-    }
+    public virtual Size Size { get; set; }
 }

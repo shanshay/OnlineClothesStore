@@ -1,23 +1,17 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class ActionLog
 {
-    public class ActionLog
-    {
-        [Key]
-        public int LogId { get; set; }
+    public int LogId { get; set; }
 
+    public int CustomerId { get; set; }
 
-        [ForeignKey("Customer")]
-        public int CustomerId { get; set; }
+    public DateTime Date { get; set; }
 
-        public Customer Customer { get; set; }
+    public string ActionDescription { get; set; }
 
-        public DateTime Date { get; set; }
-
-        public string ActionDescription { get; set; }
-
-    }
+    public virtual Customer Customer { get; set; }
 }

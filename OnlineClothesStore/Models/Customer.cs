@@ -1,22 +1,19 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class Customer
 {
-    public class Customer
-    {
-        [Key]
-        public int CustomerId { get; set; }
+    public int CustomerId { get; set; }
 
-        public User User { get; set; }
+    public int? UserId { get; set; }
 
+    public virtual ICollection<ActionLog> ActionLogs { get; } = new List<ActionLog>();
 
-        [ForeignKey("Cart")]
-        public int CartId { get; set; }        
+    public virtual ICollection<Cart> Carts { get; } = new List<Cart>();
 
-        public Cart Cart { get; set; }
-       
-        public ICollection<Order> Orders { get; set; }
-    }
+    public virtual ICollection<Order> Orders { get; } = new List<Order>();
+
+    public virtual User User { get; set; }
 }

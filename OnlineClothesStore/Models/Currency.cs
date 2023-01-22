@@ -1,17 +1,17 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class Currency
 {
-    public class Currency
-    {
-        [Key]
-        public int CurrencyId { get; set; }
+    public int CurrencyId { get; set; }
 
-        public int CurrencyNumber { get; set; }
+    public int CurrencyNumber { get; set; }
 
-        public string CurrencyName { get; set; }
+    public string CurrencyName { get; set; }
 
-        public string ShortCurrencyName { get; set; }
-    }
+    public string ShortCurrencyName { get; set; }
+
+    public virtual ICollection<Price> Prices { get; } = new List<Price>();
 }

@@ -1,20 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class Parameter
 {
-    [Table("Parameters")]
-    public class Parameter
-    {
-        [Key]
-        public int ParameterId { get; set; }
+    public int ParameterId { get; set; }
 
-        public string Descr { get; set; }
+    public string Descr { get; set; }
 
-        public decimal Size { get; set; }
-    
-        public ICollection<SaleItem> SaleItems { get; set; }
-    }
+    public decimal Size { get; set; }
+
+    public virtual ICollection<SaleItemParameter> SaleItemParameters { get; } = new List<SaleItemParameter>();
 }

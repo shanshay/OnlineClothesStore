@@ -1,33 +1,23 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class User
 {
-    public class User
-    {
-        [Key]
-        public int UserId { get; set; }
+    public int UserId { get; set; }
 
-        public string FirstName { get; set; }
+    public string FirstName { get; set; }
 
-        public string LastName { get; set; }
+    public string LastName { get; set; }
 
-        public string FullName()
-        {
-            return $"{this.FirstName} {this.LastName}";
-        }
+    public string Login { get; set; }
 
-        public string Login { get; set; }
+    public string Email { get; set; }
 
-        public string Email { get; set; }
+    public int AddressId { get; set; }
 
-        public string Phone { get; set; }
+    public virtual Address Address { get; set; }
 
-        public string Home { get; set; }
-
-        [ForeignKey("Address")]
-        public int AddressId { get; set; }
-
-        public Address Address { get; set; }
-    }
+    public virtual ICollection<Customer> Customers { get; } = new List<Customer>();
 }

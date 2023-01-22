@@ -1,44 +1,39 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class SaleItem
 {
-    [Table("SaleItems")]
-    public class SaleItem
-    {
-        [Key]        
-        public int Id { get; set; }
+    public int Id { get; set; }
 
-        public string ShortName { get; set; }
+    public string ShortName { get; set; }
 
-        public string FullName { get; set; }
+    public string FullName { get; set; }
 
-        public string Description { get; set; }
+    public string Description { get; set; }
 
-        public int Count { get; set; }
+    public int Count { get; set; }
 
-        [ForeignKey("Color")]
-        public int ColorId { get; set; }
+    public int ColorId { get; set; }
 
-        public Color Color { get; set; }
+    public int GenderId { get; set; }
 
+    public int? TypeId { get; set; }
 
-        [ForeignKey("Gender")]
-        public int GenderId { get; set; }
+    public virtual ICollection<CartItem> CartItems { get; } = new List<CartItem>();
 
-        public Gender Gender { get; set; }
+    public virtual Color Color { get; set; }
 
-        [ForeignKey("Type")]
-        public Type TypeId { get; set; }
+    public virtual Gender Gender { get; set; }
 
-        public Type Type { get; set; }
-      
-        public ICollection<Size> Sizes { get; set; }
-     
-        public ICollection <Parameter> Parameters { get; set; }
-    
-        public ICollection <Price> Prices { get; set; }
-    }
+    public virtual ICollection<Price> Prices { get; } = new List<Price>();
+
+    public virtual ICollection<SaleItemParameter> SaleItemParameters { get; } = new List<SaleItemParameter>();
+
+    public virtual ICollection<SaleItemPrice> SaleItemPrices { get; } = new List<SaleItemPrice>();
+
+    public virtual ICollection<SaleItemSize> SaleItemSizes { get; } = new List<SaleItemSize>();
+
+    public virtual Type Type { get; set; }
 }

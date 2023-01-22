@@ -1,17 +1,15 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class Size
 {
-    [Table("Sizes")]
-    public class Size
-    {
-        [Key]
-        public int SizeId { get; set; }
+    public int SizeId { get; set; }
 
-        public string Name { get; set; }
-     
-        public ICollection<SaleItem> SaleItems { get; set; }
-    }
+    public string Name { get; set; }
+
+    public virtual ICollection<CartItem> CartItems { get; } = new List<CartItem>();
+
+    public virtual ICollection<SaleItemSize> SaleItemSizes { get; } = new List<SaleItemSize>();
 }

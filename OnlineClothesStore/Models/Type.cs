@@ -1,16 +1,13 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class Type
 {
-    public class Type
-    {
-        [Key]
-        public int TypeId { get; set; }
+    public int TypeId { get; set; }
 
-        public string TypeName { get; set; }
+    public string TypeName { get; set; }
 
-        public ICollection<SaleItem> SaleItems { get; set; }
-    }
+    public virtual ICollection<SaleItem> SaleItems { get; } = new List<SaleItem>();
 }

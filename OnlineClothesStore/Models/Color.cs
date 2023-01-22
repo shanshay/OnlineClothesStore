@@ -1,16 +1,13 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class Color
 {
-    public class Color
-    {
-        [Key]
-        public int ColorId { get; set; }
+    public int ColorId { get; set; }
 
-        public string ColorName { get; set; }
-       
-        public ICollection<SaleItem> SaleItems { get; set; }
-    }
+    public string ColorName { get; set; }
+
+    public virtual ICollection<SaleItem> SaleItems { get; } = new List<SaleItem>();
 }

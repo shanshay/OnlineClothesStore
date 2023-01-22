@@ -1,23 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models
+namespace OnlineClothesStore.Models;
+
+public partial class Order
 {
-    public class Order
-    {
-        [Key]
-        public int OrderId { get; set; }
+    public int OrderId { get; set; }
 
-        public string OrderNumber { get; set; }
+    public string OrderNumber { get; set; }
 
-        [ForeignKey("Status")]
-        public int StatusId { get; set; }
+    public int StatusId { get; set; }
 
-        public Status Status { get; set; }
+    public int CustomerId { get; set; }
 
-        [ForeignKey("Customer")]
-        public int CustomerId { get; set; }
+    public virtual Customer Customer { get; set; }
 
-        public Customer Customer { get; set; }
-    }
+    public virtual Status Status { get; set; }
 }
