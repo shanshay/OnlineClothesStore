@@ -50,7 +50,7 @@ public partial class OnlineClothesStoreContext : DbContext
 
     public virtual DbSet<Status> Statuses { get; set; }
 
-    public virtual DbSet<Type> Types { get; set; }
+    public virtual DbSet<Models.Type> Types { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
@@ -186,7 +186,7 @@ public partial class OnlineClothesStoreContext : DbContext
                 .HasConstraintName("FK_SaleItemSizes_Sizes");
         });
 
-        modelBuilder.Entity<Type>(entity =>
+        modelBuilder.Entity<Models.Type>(entity =>
         {
             entity.Property(e => e.TypeId).ValueGeneratedNever();
             entity.Property(e => e.TypeName).HasMaxLength(50);
