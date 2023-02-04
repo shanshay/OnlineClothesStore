@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using OnlineClothesStore.Store.Core.Abstractions.Repositories;
 using OnlineClothesStore.Store.Core.Domain.Models;
 using OnlineClothesStore.Store.DataAccess;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace OnlineClothesStore.Store.WebHost.Controllers
 {
@@ -12,17 +14,27 @@ namespace OnlineClothesStore.Store.WebHost.Controllers
     public class SaleItemController : Controller
     {
         private readonly ILogger<SaleItemController> _logger;
-        private readonly OnlineClothesStoreContext _storeContext;
-        public SaleItemController(ILogger<SaleItemController> logger, OnlineClothesStoreContext storeContext)
+        //private readonly OnlineClothesStoreContext _saleItemRepository;
+        private readonly IRepository<SaleItem> _saleItemRepository;
+
+        public SaleItemController(
+            ILogger<SaleItemController> logger, 
+            //OnlineClothesStoreContext storeContext,
+            IRepository<SaleItem> saleItemRepository)
         {
             _logger = logger;
-            _storeContext = storeContext;
+            //_saleItemRepository = storeContext;
+            _saleItemRepository = saleItemRepository;
         }
 
         [HttpGet]
-        public IEnumerable<SaleItem> GetAll()
+        public async Task<ActionResult<List<SaleItem>>> GetSaleItemsAsync()
         {
-            return _storeContext.SaleItems;
+            var saleItems = await _saleItemRepository.GetAllAsync();
+            var response = saleItems.ToList();
+
+            return Ok(response);
+
         }
 
         //[HttpGet]

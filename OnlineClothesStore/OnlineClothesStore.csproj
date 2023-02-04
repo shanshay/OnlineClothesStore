@@ -29,8 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Store.Core\Domain\Administration\" />
-    <Folder Include="Store.WebHost\Mappers\" />
-    <Folder Include="Store.WebHost\Models\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

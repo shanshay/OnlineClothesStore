@@ -5,7 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OnlineClothesStore.Store.Core.Abstractions.Repositories;
 using OnlineClothesStore.Store.DataAccess;
+using OnlineClothesStore.Store.DataAccess.Repositories;
 
 namespace OnlineClothesStore
 {
@@ -24,8 +26,9 @@ namespace OnlineClothesStore
             services.AddDbContext<OnlineClothesStoreContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews();            
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
