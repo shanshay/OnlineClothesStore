@@ -11,32 +11,40 @@ namespace OnlineClothesStore.Store.WebHost.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    //[Route("/saleItems")]
     public class SaleItemController : Controller
     {
         private readonly ILogger<SaleItemController> _logger;
-        //private readonly OnlineClothesStoreContext _saleItemRepository;
         private readonly IRepository<SaleItem> _saleItemRepository;
 
         public SaleItemController(
-            ILogger<SaleItemController> logger, 
-            //OnlineClothesStoreContext storeContext,
+            ILogger<SaleItemController> logger,
             IRepository<SaleItem> saleItemRepository)
         {
-            _logger = logger;
-            //_saleItemRepository = storeContext;
+            _logger = logger;            
             _saleItemRepository = saleItemRepository;
         }
 
         [HttpGet]
+        //[Route("[controller]")]
+        //[Route("saleitems")]
         public async Task<ActionResult<List<SaleItem>>> GetSaleItemsAsync()
         {
-            var saleItems = await _saleItemRepository.GetAllAsync();
-            var response = saleItems.ToList();
+            var saleItems = await _saleItemRepository.GetAllAsync();        
 
-            return Ok(response);
-
+            return Ok(saleItems);
         }
 
+        [HttpGet]
+        [Route("/saleitem/{id}")]
+        public async Task<ActionResult<SaleItem>> GetSaleItemById(int id)
+        {
+            var saleItem = await _saleItemRepository.GetByIdAsync(id);
+            if (saleItem == null)
+                return NotFound();
+
+            return Ok(saleItem);
+        }
         //[HttpGet]
         //public SaleItem GetById(int id)
         //{
