@@ -24,7 +24,8 @@ export class SaleItems extends Component {
                 </thead>
                 <tbody>
                     {saleitems.map(saleitem =>
-                        <tr key={saleitem.shortname}>
+                        <tr key={saleitem.id}>
+                            <td>{saleitem.shortName}</td>
                             <td>{saleitem.description}</td>
                             <td>{saleitem.count}</td>
                         </tr>
