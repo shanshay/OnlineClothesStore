@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class SaleItemParameter
+public partial class SaleItemParameter : BaseEntity
 {
-    public int SaleItemParameterId { get; set; }
-
     public int? SaleItemId { get; set; }
 
     public int? ParameterId { get; set; }

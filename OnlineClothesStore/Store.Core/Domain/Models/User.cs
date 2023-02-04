@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class User
+public partial class User : BaseEntity
 {
-    public int UserId { get; set; }
-
     public string FirstName { get; set; }
 
     public string LastName { get; set; }

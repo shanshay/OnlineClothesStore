@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class ActionLog
+public partial class ActionLog : BaseEntity
 {
-    public int LogId { get; set; }
-
     public int CustomerId { get; set; }
 
     public DateTime Date { get; set; }

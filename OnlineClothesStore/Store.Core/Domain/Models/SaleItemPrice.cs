@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class SaleItemPrice
+public partial class SaleItemPrice : BaseEntity
 {
-    public int SaleItemPriceId { get; set; }
-
     public int? SaleItemId { get; set; }
 
     public int? PriceId { get; set; }

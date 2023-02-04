@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class Order
+public partial class Order : BaseEntity
 {
-    public int OrderId { get; set; }
-
     public string OrderNumber { get; set; }
 
     public int StatusId { get; set; }

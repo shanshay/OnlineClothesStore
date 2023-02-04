@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class Type
+public partial class Type : BaseEntity
 {
-    public int TypeId { get; set; }
-
     public string TypeName { get; set; }
 
     public virtual ICollection<SaleItem> SaleItems { get; } = new List<SaleItem>();

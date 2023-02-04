@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class Size
+public partial class Size : BaseEntity
 {
-    public int SizeId { get; set; }
-
     public string Name { get; set; }
 
     public virtual ICollection<CartItem> CartItems { get; } = new List<CartItem>();

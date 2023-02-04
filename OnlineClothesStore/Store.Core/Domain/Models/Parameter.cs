@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class Parameter
+public partial class Parameter : BaseEntity
 {
-    public int ParameterId { get; set; }
-
     public string Descr { get; set; }
 
     public decimal Size { get; set; }

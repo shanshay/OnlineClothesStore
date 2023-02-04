@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using OnlineClothesStore.Data;
-using OnlineClothesStore.Models;
+using OnlineClothesStore.Store.Core.Domain.Models;
+using OnlineClothesStore.Store.DataAccess;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OnlineClothesStore.Controllers
+namespace OnlineClothesStore.Store.WebHost.Controllers
 {
     [ApiController]
     [Route("[controller]")]

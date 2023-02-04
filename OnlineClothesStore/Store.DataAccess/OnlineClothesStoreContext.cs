@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using OnlineClothesStore.Models;
+using OnlineClothesStore.Store.Core.Domain.Models;
 
-namespace OnlineClothesStore.Data;
+namespace OnlineClothesStore.Store.DataAccess;
 
 public partial class OnlineClothesStoreContext : DbContext
 {
@@ -50,7 +50,7 @@ public partial class OnlineClothesStoreContext : DbContext
 
     public virtual DbSet<Status> Statuses { get; set; }
 
-    public virtual DbSet<Models.Type> Types { get; set; }
+    public virtual DbSet<Core.Domain.Models.Type> Types { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
@@ -62,7 +62,7 @@ public partial class OnlineClothesStoreContext : DbContext
     {
         modelBuilder.Entity<ActionLog>(entity =>
         {
-            entity.HasKey(e => e.LogId);
+            entity.HasKey(e => e.Id);
 
             entity.HasIndex(e => e.CustomerId, "IX_ActionLogs_CustomerId");
 
@@ -149,7 +149,7 @@ public partial class OnlineClothesStoreContext : DbContext
 
         modelBuilder.Entity<SaleItemParameter>(entity =>
         {
-            entity.Property(e => e.SaleItemParameterId).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedNever();
 
             entity.HasOne(d => d.Parameter).WithMany(p => p.SaleItemParameters)
                 .HasForeignKey(d => d.ParameterId)
@@ -162,7 +162,7 @@ public partial class OnlineClothesStoreContext : DbContext
 
         modelBuilder.Entity<SaleItemPrice>(entity =>
         {
-            entity.Property(e => e.SaleItemPriceId).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedNever();
 
             entity.HasOne(d => d.Price).WithMany(p => p.SaleItemPrices)
                 .HasForeignKey(d => d.PriceId)
@@ -175,10 +175,10 @@ public partial class OnlineClothesStoreContext : DbContext
 
         modelBuilder.Entity<SaleItemSize>(entity =>
         {
-            entity.Property(e => e.SaleItemSizeId).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedNever();
 
             entity.HasOne(d => d.SaleItem).WithMany(p => p.SaleItemSizes)
-                .HasForeignKey(d => d.SaleItemId)
+                .HasForeignKey(d => d.Id)
                 .HasConstraintName("FK_SaleItemSizes_SaleItems");
 
             entity.HasOne(d => d.Size).WithMany(p => p.SaleItemSizes)
@@ -186,9 +186,9 @@ public partial class OnlineClothesStoreContext : DbContext
                 .HasConstraintName("FK_SaleItemSizes_Sizes");
         });
 
-        modelBuilder.Entity<Models.Type>(entity =>
+        modelBuilder.Entity<Core.Domain.Models.Type>(entity =>
         {
-            entity.Property(e => e.TypeId).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.TypeName).HasMaxLength(50);
         });
 

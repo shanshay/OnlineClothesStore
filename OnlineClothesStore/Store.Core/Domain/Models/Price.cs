@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class Price
+public partial class Price : BaseEntity
 {
-    public int PriceId { get; set; }
-
     public DateTime DateSet { get; set; }
 
     public decimal PriceSize { get; set; }

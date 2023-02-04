@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class Address
+public partial class Address : BaseEntity
 {
-    public int AddressId { get; set; }
-
     public string Index { get; set; }
 
     public string Country { get; set; }

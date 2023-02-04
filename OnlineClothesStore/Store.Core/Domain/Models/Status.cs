@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class Status
+public partial class Status : BaseEntity
 {
-    public int StatusId { get; set; }
-
     public string Name { get; set; }
 
     public virtual ICollection<Order> Orders { get; } = new List<Order>();

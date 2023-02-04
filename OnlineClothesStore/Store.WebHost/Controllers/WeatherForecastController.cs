@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlineClothesStore.Controllers
+namespace OnlineClothesStore.Store.WebHost.Controllers
 {
     [ApiController]
     [Route("[controller]")]

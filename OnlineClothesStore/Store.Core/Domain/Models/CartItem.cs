@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class CartItem
+public partial class CartItem : BaseEntity
 {
-    public int CartItemId { get; set; }
-
     public int CartId { get; set; }
 
     public int SaleItemId { get; set; }

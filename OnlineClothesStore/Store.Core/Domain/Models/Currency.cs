@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OnlineClothesStore.Models;
+namespace OnlineClothesStore.Store.Core.Domain.Models;
 
-public partial class Currency
+public partial class Currency : BaseEntity
 {
-    public int CurrencyId { get; set; }
-
     public int CurrencyNumber { get; set; }
 
     public string CurrencyName { get; set; }
