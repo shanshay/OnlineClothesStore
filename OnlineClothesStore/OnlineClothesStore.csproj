@@ -28,7 +28,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Store.Core\Domain\Administration\" />
+    <Folder Include="Store.WebHost\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Store.Core\Store.Core.csproj" />
+    <ProjectReference Include="..\Store.DataAccess\Store.DataAccess.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

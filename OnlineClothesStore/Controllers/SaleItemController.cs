@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Logging;
 using OnlineClothesStore.Store.Core.Abstractions.Repositories;
 using OnlineClothesStore.Store.Core.Domain.Models;
-using OnlineClothesStore.Store.DataAccess;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

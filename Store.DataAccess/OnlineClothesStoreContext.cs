@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using OnlineClothesStore.Store.Core.Domain.Models;
 
 namespace OnlineClothesStore.Store.DataAccess;
 
 public partial class OnlineClothesStoreContext : DbContext
 {
-    public OnlineClothesStoreContext()
-    {
-    }
-
     public OnlineClothesStoreContext(DbContextOptions<OnlineClothesStoreContext> options)
         : base(options)
     {

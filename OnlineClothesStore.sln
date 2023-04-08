@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32802.440
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineClothesStore", "OnlineClothesStore\OnlineClothesStore.csproj", "{29BDED4D-57C7-4799-8900-0F971CCE3451}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineClothesStore", "OnlineClothesStore\OnlineClothesStore.csproj", "{29BDED4D-57C7-4799-8900-0F971CCE3451}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Core", "Store.Core\Store.Core.csproj", "{283542BA-3BBE-4A1C-9123-83776E44BC12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.DataAccess", "Store.DataAccess\Store.DataAccess.csproj", "{521D5DA6-2783-40AE-B5AE-CDE45EDD9D04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{29BDED4D-57C7-4799-8900-0F971CCE3451}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29BDED4D-57C7-4799-8900-0F971CCE3451}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29BDED4D-57C7-4799-8900-0F971CCE3451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{283542BA-3BBE-4A1C-9123-83776E44BC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{283542BA-3BBE-4A1C-9123-83776E44BC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{283542BA-3BBE-4A1C-9123-83776E44BC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{283542BA-3BBE-4A1C-9123-83776E44BC12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{521D5DA6-2783-40AE-B5AE-CDE45EDD9D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{521D5DA6-2783-40AE-B5AE-CDE45EDD9D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{521D5DA6-2783-40AE-B5AE-CDE45EDD9D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{521D5DA6-2783-40AE-B5AE-CDE45EDD9D04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
