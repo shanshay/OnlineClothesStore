@@ -25,7 +25,8 @@ namespace OnlineClothesStore
         {
             services.AddDbContext<OnlineClothesStoreContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection"))
+                .UseLazyLoadingProxies());
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
             services.AddControllersWithViews();            

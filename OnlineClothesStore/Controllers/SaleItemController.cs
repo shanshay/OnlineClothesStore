@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using OnlineClothesStore.Store.Core.Abstractions.Repositories;
 using OnlineClothesStore.Store.Core.Domain.Models;
+using OnlineClothesStore.Store.WebHost.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,9 +30,17 @@ namespace OnlineClothesStore.Store.WebHost.Controllers
         //[Route("saleitems")]
         public async Task<ActionResult<List<SaleItem>>> GetSaleItemsAsync()
         {
-            var saleItems = await _saleItemRepository.GetAllAsync();        
+            var saleItems = await _saleItemRepository.GetAllAsync();
 
-            return Ok(saleItems);
+            var response = saleItems.Select(si => new SaleItemsShortResponse()
+            {
+                Id = si.Id,
+                ShortName = si.ShortName,
+                Description = si.Description,
+                Count = si.Count
+            });
+
+            return Ok(response);
         }
 
         [HttpGet]
