@@ -13,7 +13,7 @@ namespace OnlineClothesStore.Store.Core.Abstractions.Repositories
 
         Task<IEnumerable<T>> GetRangeByIdsAsync(List<int> ids);
 
-        Task AddAsync(T entity);
+        Task CreateAsync(T entity);
 
         Task UpdateAsync(T entity);
 

@@ -35,6 +35,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Store.Core\Store.Core.csproj" />
     <ProjectReference Include="..\Store.DataAccess\Store.DataAccess.csproj" />
+    <ProjectReference Include="..\Store.Exceptions\Store.Exceptions.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
