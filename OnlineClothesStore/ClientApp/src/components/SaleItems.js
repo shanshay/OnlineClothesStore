@@ -6,22 +6,7 @@ export class SaleItems extends Component {
     constructor(props) {
         super(props);
         this.state = { saleitems: [], loading: true };
-        this.onClick = this.onClick.bind(this);
     }
-    onClick(e) {
-        this.props.onRemove(this.state.data);
-    }
-
-    //onClick(e) {
-    //    this.props.OnRemove(this.state.data);
-    //}
-    //render() {
-    //    return <div>
-    //        <p><b>{this.state.data.name}</b></p>
-    //        <p>Цена {this.state.data.price}</p>
-    //        <p><button onClick={this.onClick}>Удалить</button></p>
-    //    </div>;
-    //}
 
     componentDidMount() {
         this.populateSaleItemsData();
@@ -43,8 +28,6 @@ export class SaleItems extends Component {
                             <td>{saleitem.shortName}</td>
                             <td>{saleitem.description}</td>
                             <td>{saleitem.count}</td>
-                            <td><button onClick={this.onClick}>Delete</button></td>
-                            <td><button></button></></td>
                         </tr>
                     )}
                 </tbody>
