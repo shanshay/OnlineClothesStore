@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Routes, Route, Link } from "react-router-dom";
 
 export class SaleItems extends Component {
     static displayName = SaleItems.name;
@@ -44,6 +45,9 @@ export class SaleItems extends Component {
             <div>
                 <h1 id="tabelLabel" >Sale items</h1>
                 <p>List of available items.</p>
+                <p>
+                    <Link to="/addSaleItem">Create New</Link>
+                </p>
                 {contents}
             </div>
         );
@@ -53,5 +57,7 @@ export class SaleItems extends Component {
         const response = await fetch('saleitem');
         const data = await response.json();
         this.setState({ saleitems: data, loading: false });
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
     }
 }
